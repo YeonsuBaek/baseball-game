@@ -3,6 +3,7 @@ const OutputView = require('./OutputView');
 const InputView = require('./InputView');
 const Computer = require('./Computer');
 const Referee = require('./Referee');
+const UserValidation = require('./UserValidation');
 
 class Game {
   #computer;
@@ -27,6 +28,8 @@ class Game {
   }
 
   handleUserNumbers = (numbers) => {
+    UserValidation.validateUser(numbers);
+
     this.#user = numbers.split('').map((number) => {
       return parseInt(number, 10);
     });
