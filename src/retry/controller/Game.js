@@ -1,7 +1,7 @@
 const { Console } = require('@woowacourse/mission-utils');
 const OutputView = require('../view/OutputView');
 const InputView = require('../view/InputView');
-const Computer = require('../model/Computer');
+const RandomNumberGenerator = require('../model/RandomNumberMaker');
 const Referee = require('../model/Referee');
 const UserValidation = require('../validation/UserValidation');
 const OptionValidation = require('../validation/OptionValidation');
@@ -20,7 +20,7 @@ class Game {
   }
 
   getNumbers() {
-    this.#computer = new Computer().getNumbers();
+    this.#computer = RandomNumberGenerator.generate();
     this.getUserNumbers();
   }
 
