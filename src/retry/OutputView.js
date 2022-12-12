@@ -10,6 +10,13 @@ const OutputView = {
   printStart() {
     Console.print('숫자 야구 게임을 시작합니다.');
   },
+
+  /**
+   * 숫자 비교 결과를 출력한다.
+   */
+  printResult(message) {
+    Console.print(message.join(' '));
+  },
 };
 
 module.exports = OutputView;
