@@ -4,6 +4,7 @@ const InputView = require('./InputView');
 const Computer = require('./Computer');
 const Referee = require('./Referee');
 const UserValidation = require('./UserValidation');
+const OptionValidation = require('./OptionValidation');
 
 class Game {
   #computer;
@@ -58,6 +59,7 @@ class Game {
   }
 
   handleOptions = (option) => {
+    OptionValidation.validateOption(option);
     if (option === '1') return this.getNumbers();
     if (option === '2') Console.close();
   };
